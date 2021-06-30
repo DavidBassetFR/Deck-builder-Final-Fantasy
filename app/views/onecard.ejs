@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<% if (card){ %>
+
+  <div class ="card-container">
+<div class="onecard">
+    <h1 class="info_element"> <%= card.name %> </h1>
+    <img src="/visuals/<%= card.visual_name %>" alt="<%= card.name %> illustration"/>
+    <% if (card.element !== null) { %>
+       <h2 class= "info_element"> Monstre d'élement : <%= card.element %> </h2>
+    <% } else { %>
+      <h2 class= "info_element"> Monstre n'ayant pas d'élément %> </h2>
+    <% } %>
+      
+        <h2 class= "info_element"> Monstre de niveau : <%= card.level %> </h2>
+<br> 
+        <a class= "info_element" href="/deck/add/<%= card.id %>"> Ajouter à votre deck</a>
+</div>
+ 
+
+</div>
+   <% } else { %>
+   
+
+<h1> Veuillez choisir une carte disponible</h1>
+  <% } %>
+
+
+<%- include('partials/footer') %>
